@@ -25,18 +25,6 @@
     }];
 
     [Parse initializeWithConfiguration:config];
-    
-    
-    
-    PFObject *glitchMode = [PFObject objectWithClassName:@"NCT"];
-    glitchMode[@"glitchMode"] = @33;
-    [glitchMode saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Object saved!");
-        } else {
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
 
     
 
