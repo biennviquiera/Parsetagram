@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Parse/Parse.h"
 
 @interface AppDelegate ()
 
@@ -14,8 +15,31 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
+
+    ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+
+        configuration.applicationId = @"5zEKk1owDiOD5VxRXJcUhoFWh8MUYkLb75UN7Sys"; // <- UPDATE
+        configuration.clientKey = @"J3jkX3Q1aHfjs938BXL99cwz6OJdb7QlEKuEP5Dg"; // <- UPDATE
+        configuration.server = @"https://parseapi.back4app.com";
+    }];
+
+    [Parse initializeWithConfiguration:config];
+    
+    
+    
+    PFObject *glitchMode = [PFObject objectWithClassName:@"NCT"];
+    glitchMode[@"glitchMode"] = @33;
+    [glitchMode saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Object saved!");
+        } else {
+            NSLog(@"Error: %@", error.description);
+        }
+    }];
+
+    
+
     return YES;
 }
 
