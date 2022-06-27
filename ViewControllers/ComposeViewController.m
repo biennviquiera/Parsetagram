@@ -45,6 +45,8 @@
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     
+    
+    
 }
 
 //delegate for tapped photo
@@ -55,6 +57,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
+    self.postImage.image = editedImage;
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
