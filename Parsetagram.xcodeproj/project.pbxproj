@@ -19,6 +19,7 @@
 		463DAC67286A4209004CABB7 /* ParsetagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC66286A4209004CABB7 /* ParsetagramTests.m */; };
 		463DAC71286A4209004CABB7 /* ParsetagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC70286A4209004CABB7 /* ParsetagramUITests.m */; };
 		463DAC73286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC72286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m */; };
+		463DAC81286A4A0E004CABB7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC80286A4A0E004CABB7 /* HomeViewController.m */; };
 		7DF4A1001665415A3732665E /* Pods_Parsetagram_ParsetagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EF9B78C1FE901DE1EF7C0B /* Pods_Parsetagram_ParsetagramUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		463DAC6C286A4209004CABB7 /* ParsetagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParsetagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463DAC70286A4209004CABB7 /* ParsetagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsetagramUITests.m; sourceTree = "<group>"; };
 		463DAC72286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsetagramUITestsLaunchTests.m; sourceTree = "<group>"; };
+		463DAC7F286A4A0E004CABB7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		463DAC80286A4A0E004CABB7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		65050BC2A73F2B6CC49AAF5A /* Pods_Parsetagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parsetagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA11693E7EDEC90AF549BE05 /* Pods-Parsetagram-ParsetagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram-ParsetagramUITests.release.xcconfig"; path = "Target Support Files/Pods-Parsetagram-ParsetagramUITests/Pods-Parsetagram-ParsetagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BAE611EB8055C8B909BB17B7 /* Pods-ParsetagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsetagramTests.release.xcconfig"; path = "Target Support Files/Pods-ParsetagramTests/Pods-ParsetagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,12 +137,12 @@
 		463DAC49286A4209004CABB7 /* Parsetagram */ = {
 			isa = PBXGroup;
 			children = (
+				463DAC84286A4C2F004CABB7 /* Views */,
+				463DAC82286A4A18004CABB7 /* ViewControllers */,
 				463DAC4A286A4209004CABB7 /* AppDelegate.h */,
 				463DAC4B286A4209004CABB7 /* AppDelegate.m */,
 				463DAC4D286A4209004CABB7 /* SceneDelegate.h */,
 				463DAC4E286A4209004CABB7 /* SceneDelegate.m */,
-				463DAC50286A4209004CABB7 /* LoginViewController.h */,
-				463DAC51286A4209004CABB7 /* LoginViewController.m */,
 				463DAC53286A4209004CABB7 /* Main.storyboard */,
 				463DAC56286A4209004CABB7 /* Assets.xcassets */,
 				463DAC58286A4209004CABB7 /* LaunchScreen.storyboard */,
@@ -164,6 +167,25 @@
 				463DAC72286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m */,
 			);
 			path = ParsetagramUITests;
+			sourceTree = "<group>";
+		};
+		463DAC82286A4A18004CABB7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				463DAC50286A4209004CABB7 /* LoginViewController.h */,
+				463DAC51286A4209004CABB7 /* LoginViewController.m */,
+				463DAC7F286A4A0E004CABB7 /* HomeViewController.h */,
+				463DAC80286A4A0E004CABB7 /* HomeViewController.m */,
+			);
+			name = ViewControllers;
+			path = ../ViewControllers;
+			sourceTree = "<group>";
+		};
+		463DAC84286A4C2F004CABB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5F188980007C78290886848A /* Frameworks */ = {
@@ -417,6 +439,7 @@
 				463DAC52286A4209004CABB7 /* LoginViewController.m in Sources */,
 				463DAC4C286A4209004CABB7 /* AppDelegate.m in Sources */,
 				463DAC5D286A4209004CABB7 /* main.m in Sources */,
+				463DAC81286A4A0E004CABB7 /* HomeViewController.m in Sources */,
 				463DAC4F286A4209004CABB7 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
