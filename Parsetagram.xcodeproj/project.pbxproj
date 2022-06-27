@@ -21,6 +21,7 @@
 		463DAC73286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC72286A4209004CABB7 /* ParsetagramUITestsLaunchTests.m */; };
 		463DAC81286A4A0E004CABB7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC80286A4A0E004CABB7 /* HomeViewController.m */; };
 		463DAC87286A4F69004CABB7 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC86286A4F69004CABB7 /* ComposeViewController.m */; };
+		463DAC8A286A506A004CABB7 /* HomeFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC89286A506A004CABB7 /* HomeFeedCell.m */; };
 		7DF4A1001665415A3732665E /* Pods_Parsetagram_ParsetagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EF9B78C1FE901DE1EF7C0B /* Pods_Parsetagram_ParsetagramUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		463DAC80286A4A0E004CABB7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		463DAC85286A4F69004CABB7 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ComposeViewController.h; path = ViewControllers/ComposeViewController.h; sourceTree = SOURCE_ROOT; };
 		463DAC86286A4F69004CABB7 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ComposeViewController.m; path = ViewControllers/ComposeViewController.m; sourceTree = SOURCE_ROOT; };
+		463DAC88286A506A004CABB7 /* HomeFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedCell.h; sourceTree = "<group>"; };
+		463DAC89286A506A004CABB7 /* HomeFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedCell.m; sourceTree = "<group>"; };
 		65050BC2A73F2B6CC49AAF5A /* Pods_Parsetagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parsetagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA11693E7EDEC90AF549BE05 /* Pods-Parsetagram-ParsetagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram-ParsetagramUITests.release.xcconfig"; path = "Target Support Files/Pods-Parsetagram-ParsetagramUITests/Pods-Parsetagram-ParsetagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BAE611EB8055C8B909BB17B7 /* Pods-ParsetagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsetagramTests.release.xcconfig"; path = "Target Support Files/Pods-ParsetagramTests/Pods-ParsetagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 		463DAC84286A4C2F004CABB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				463DAC88286A506A004CABB7 /* HomeFeedCell.h */,
+				463DAC89286A506A004CABB7 /* HomeFeedCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463DAC8A286A506A004CABB7 /* HomeFeedCell.m in Sources */,
 				463DAC52286A4209004CABB7 /* LoginViewController.m in Sources */,
 				463DAC4C286A4209004CABB7 /* AppDelegate.m in Sources */,
 				463DAC5D286A4209004CABB7 /* main.m in Sources */,
