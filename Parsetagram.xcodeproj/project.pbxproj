@@ -11,7 +11,7 @@
 		13C27A88B45EE06BECEDC27A /* Pods_ParsetagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB5544FA32E95AE688AEFAB /* Pods_ParsetagramTests.framework */; };
 		463DAC4C286A4209004CABB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC4B286A4209004CABB7 /* AppDelegate.m */; };
 		463DAC4F286A4209004CABB7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC4E286A4209004CABB7 /* SceneDelegate.m */; };
-		463DAC52286A4209004CABB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC51286A4209004CABB7 /* ViewController.m */; };
+		463DAC52286A4209004CABB7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463DAC51286A4209004CABB7 /* LoginViewController.m */; };
 		463DAC55286A4209004CABB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463DAC53286A4209004CABB7 /* Main.storyboard */; };
 		463DAC57286A4209004CABB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463DAC56286A4209004CABB7 /* Assets.xcassets */; };
 		463DAC5A286A4209004CABB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463DAC58286A4209004CABB7 /* LaunchScreen.storyboard */; };
@@ -46,8 +46,8 @@
 		463DAC4B286A4209004CABB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		463DAC4D286A4209004CABB7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		463DAC4E286A4209004CABB7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		463DAC50286A4209004CABB7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		463DAC51286A4209004CABB7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		463DAC50286A4209004CABB7 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		463DAC51286A4209004CABB7 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		463DAC54286A4209004CABB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		463DAC56286A4209004CABB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463DAC59286A4209004CABB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 				D00B41F4A9951DDCFF6E35BE /* Pods-ParsetagramTests.debug.xcconfig */,
 				BAE611EB8055C8B909BB17B7 /* Pods-ParsetagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,8 +138,8 @@
 				463DAC4B286A4209004CABB7 /* AppDelegate.m */,
 				463DAC4D286A4209004CABB7 /* SceneDelegate.h */,
 				463DAC4E286A4209004CABB7 /* SceneDelegate.m */,
-				463DAC50286A4209004CABB7 /* ViewController.h */,
-				463DAC51286A4209004CABB7 /* ViewController.m */,
+				463DAC50286A4209004CABB7 /* LoginViewController.h */,
+				463DAC51286A4209004CABB7 /* LoginViewController.m */,
 				463DAC53286A4209004CABB7 /* Main.storyboard */,
 				463DAC56286A4209004CABB7 /* Assets.xcassets */,
 				463DAC58286A4209004CABB7 /* LaunchScreen.storyboard */,
@@ -415,7 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463DAC52286A4209004CABB7 /* ViewController.m in Sources */,
+				463DAC52286A4209004CABB7 /* LoginViewController.m in Sources */,
 				463DAC4C286A4209004CABB7 /* AppDelegate.m in Sources */,
 				463DAC5D286A4209004CABB7 /* main.m in Sources */,
 				463DAC4F286A4209004CABB7 /* SceneDelegate.m in Sources */,

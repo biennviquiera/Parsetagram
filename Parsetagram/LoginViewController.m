@@ -1,17 +1,17 @@
 //
-//  ViewController.m
+//  LoginViewController.m
 //  Parsetagram
 //
 //  Created by Bienn Viquiera on 6/27/22.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
