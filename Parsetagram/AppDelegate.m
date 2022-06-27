@@ -6,7 +6,9 @@
 //
 
 #import "AppDelegate.h"
+#import "SceneDelegate.h"
 #import "Parse/Parse.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +27,8 @@
     }];
 
     [Parse initializeWithConfiguration:config];
+    
+    
 
     
 

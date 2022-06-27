@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Home Feed-->
         <scene sceneID="xyQ-1o-ukP">
             <objects>
-                <viewController title="Home Feed" id="dVX-iv-xJx" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home Feed" id="dVX-iv-xJx" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JS9-ZK-0OO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home Feed" id="efG-kw-Df3">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="qCm-YN-cLp"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="qCm-YN-cLp">
+                            <connections>
+                                <action selector="didTapLogout:" destination="dVX-iv-xJx" id="JcX-ZN-xOU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Compose" image="insta_camera_btn" landscapeImage="insta_camera_btn" style="plain" id="wdU-jg-IkX">
                             <color key="tintColor" name="AccentColor"/>
                             <connections>
@@ -207,7 +211,7 @@
         <!--Home-->
         <scene sceneID="Cj3-O0-1rZ">
             <objects>
-                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="tnQ-vS-sFv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" title="Home" automaticallyAdjustsScrollViewInsets="NO" id="tnQ-vS-sFv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home Feed" image="house" catalog="system" id="ad6-eB-Hc9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vCe-Jc-pGz">
