@@ -1,5 +1,5 @@
 //
-//  ComposeViewController.h
+//  ImagePickerViewController.h
 //  Parsetagram
 //
 //  Created by Bienn Viquiera on 6/27/22.
@@ -9,8 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ComposeViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@interface ImagePickerViewController : UIViewController
 
 @end
 

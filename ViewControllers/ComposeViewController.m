@@ -12,12 +12,24 @@
 @end
 
 @implementation ComposeViewController
+- (IBAction)dismissVC:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //create tap gesture recognizer
+    UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tappedPhoto:)];
+    photoTap.numberOfTapsRequired = 1;
+    [self.postImage addGestureRecognizer:photoTap];
 }
 
+- (void)tappedPhoto: (id)sender {
+    NSLog(@"I've been tapped!");
+}
 /*
 #pragma mark - Navigation
 
