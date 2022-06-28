@@ -282,7 +282,7 @@
         <!--Tab Bar-->
         <scene sceneID="ijP-PT-pys">
             <objects>
-                <tabBarController title="Tab Bar" automaticallyAdjustsScrollViewInsets="NO" id="raQ-l1-1Kd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="Tab Bar" automaticallyAdjustsScrollViewInsets="NO" id="raQ-l1-1Kd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="GUp-Mo-9Zb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36k-tQ-Hia">

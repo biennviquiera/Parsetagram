@@ -28,13 +28,21 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [self queryPosts];
+    [self.tableView reloadData];
+    
+}
+
+- (void)queryPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
     
     [query includeKey:@"image"];
     [query includeKey:@"caption"];
     [query includeKey:@"author"];
-    
+    [query includeKey:@"createdAt"];
     query.limit = 20;
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (objects) {
             self.arrayOfPosts = objects;
@@ -45,10 +53,8 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
-    [self.tableView reloadData];
-    
 }
+
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
@@ -82,14 +88,15 @@
 }
 
     
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 @end

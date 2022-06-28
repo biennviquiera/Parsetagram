@@ -61,7 +61,7 @@
 //            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HomeViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+            HomeViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier:@"TabBarController"];
             self.view.window.rootViewController = homeVC;
             
         }

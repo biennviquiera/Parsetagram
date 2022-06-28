@@ -22,7 +22,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         self.window.rootViewController = homeViewController;
     }
 }
