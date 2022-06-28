@@ -30,7 +30,6 @@
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
