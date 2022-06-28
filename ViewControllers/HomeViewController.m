@@ -14,6 +14,8 @@
 
 
 @interface HomeViewController()
+@property(nonatomic, strong, nullable) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation HomeViewController
@@ -24,6 +26,10 @@
     // query parse for data to show in home vc
     self.tableView.estimatedRowHeight = 360;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -85,6 +91,13 @@
     [cell.image loadInBackground];
     
     return cell;
+}
+
+- (void) beginRefresh:(UIRefreshControl *) refreshControl {
+    [self.refreshControl beginRefreshing];
+    [self queryPosts];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
     
