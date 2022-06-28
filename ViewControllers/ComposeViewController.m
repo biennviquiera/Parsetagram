@@ -20,7 +20,6 @@
 }
 - (IBAction)didTapCompose:(id)sender {
     //do the parse backend stuff here
-    
     [Post postUserImage:self.postImage.image withCaption:self.captionLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
     }];
     

@@ -8,9 +8,10 @@
 #import "HomeViewController.h"
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
+#import "HomeFeedCell.h"
 #import "LoginViewController.h" 
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDataSource, UITableViewDataSource>
 
 @end
 
