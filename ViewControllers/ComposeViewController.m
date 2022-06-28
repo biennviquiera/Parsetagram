@@ -16,6 +16,14 @@
     [self dismissViewControllerAnimated:true completion:nil];
 
 }
+- (IBAction)didTapCompose:(id)sender {
+    //do the parse stuff here
+    
+    
+    //close
+    [self dismissViewControllerAnimated:true completion:nil];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,11 +65,30 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
-    self.postImage.image = editedImage;
+    //define resized image
+    CGSize size = CGSizeMake(360, 360);
+    UIImage *resizedImage = (UIImage *) [self resizeImage:editedImage withSize:size];
+    self.postImage.image = resizedImage;
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//resize for image limit
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 /*
 #pragma mark - Navigation
 
