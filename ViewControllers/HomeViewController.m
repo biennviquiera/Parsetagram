@@ -94,7 +94,7 @@
 }
 
 - (void) beginRefresh:(UIRefreshControl *) refreshControl {
-    [self.refreshControl beginRefreshing];
+    [refreshControl beginRefreshing];
     [self queryPosts];
     [self.tableView reloadData];
     [refreshControl endRefreshing];
