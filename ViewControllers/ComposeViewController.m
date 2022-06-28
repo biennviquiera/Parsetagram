@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import <Parse/Parse.h>
+#import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -18,8 +19,10 @@
 
 }
 - (IBAction)didTapCompose:(id)sender {
-    //do the parse stuff here
+    //do the parse backend stuff here
     
+    [Post postUserImage:self.postImage.image withCaption:self.captionLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    }];
     
     //close
     [self dismissViewControllerAnimated:true completion:nil];
@@ -62,7 +65,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+//    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
@@ -70,6 +73,7 @@
     CGSize size = CGSizeMake(360, 360);
     UIImage *resizedImage = (UIImage *) [self resizeImage:editedImage withSize:size];
     self.postImage.image = resizedImage;
+    
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];

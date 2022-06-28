@@ -6,6 +6,7 @@
 //
 
 #import "LoginViewController.h"
+#import "HomeViewController.h"
 #import <Parse/Parse.h>
 
 @interface LoginViewController ()
@@ -57,8 +58,12 @@
             NSLog(@"User logged in successfully");
             
             // display view controller that needs to shown after successful login
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
-
+//            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HomeViewController *homeVC = [storyBoard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+            self.view.window.rootViewController = homeVC;
+            
         }
     }];
 }

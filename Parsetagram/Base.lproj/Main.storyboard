@@ -74,7 +74,7 @@
                     <connections>
                         <outlet property="passwordField" destination="zCX-5B-rwy" id="DXs-7H-82s"/>
                         <outlet property="usernameField" destination="xsZ-S9-9fl" id="hDJ-o3-eBa"/>
-                        <segue destination="raQ-l1-1Kd" kind="presentation" identifier="loginSegue" id="Taj-pw-fkU"/>
+                        <segue destination="raQ-l1-1Kd" kind="show" identifier="loginSegue" id="Taj-pw-fkU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,7 +84,7 @@
         <!--Home Feed-->
         <scene sceneID="xyQ-1o-ukP">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" title="Home Feed" id="dVX-iv-xJx" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home Feed" modalPresentationStyle="fullScreen" id="dVX-iv-xJx" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JS9-ZK-0OO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +266,7 @@
             <objects>
                 <tabBarController title="Tab Bar" automaticallyAdjustsScrollViewInsets="NO" id="raQ-l1-1Kd" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GUp-Mo-9Zb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36k-tQ-Hia">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
