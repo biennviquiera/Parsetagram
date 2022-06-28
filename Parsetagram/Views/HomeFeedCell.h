@@ -6,10 +6,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeFeedCell : UITableViewCell
+
+@property (strong, nonatomic) IBOutlet PFImageView *image;
+@property (strong, nonatomic) IBOutlet UILabel *captionLabel;
+@property (strong, nonatomic) Post *post;
+
+
 
 @end
 

@@ -20,4 +20,10 @@
     // Configure the view for the selected state
 }
 
+
+//- (void)setPost:(Post *)post {
+//    
+//}
+
+
 @end

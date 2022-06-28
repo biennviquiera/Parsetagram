@@ -9,10 +9,11 @@
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 #import "HomeFeedCell.h"
-#import "LoginViewController.h" 
+#import "Post.h"
+#import "LoginViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDataSource>
 
+@interface HomeViewController()
 @end
 
 @implementation HomeViewController
@@ -20,6 +21,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // query parse for data to show in home vc
+    self.tableView.estimatedRowHeight = 360;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    
+    [query includeKey:@"image"];
+    [query includeKey:@"caption"];
+    [query includeKey:@"author"];
+    
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects) {
+            self.arrayOfPosts = objects;
+            NSLog(@"%@",self.arrayOfPosts);
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    
+    [self.tableView reloadData];
+    
 }
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -34,6 +62,25 @@
     myDelegate.window.rootViewController = loginViewController;
     
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"array count %lu", self.arrayOfPosts.count);
+    return self.arrayOfPosts.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HomeFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell" forIndexPath:indexPath];
+    Post *currentPost = self.arrayOfPosts[indexPath.row];
+    NSLog(@"fifth item%@", self.arrayOfPosts[indexPath.row]);
+    
+    NSLog(@"I reached it!!");
+    cell.image.file = currentPost[@"image"];
+    cell.captionLabel.text = currentPost[@"caption"];
+    [cell.image loadInBackground];
+    
+    return cell;
+}
+
     
 /*
 #pragma mark - Navigation

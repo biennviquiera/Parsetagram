@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
-@property (weak, nonatomic) IBOutlet UITextView *captionLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *postImage;
+@property (strong, nonatomic) IBOutlet UITextView *captionLabel;
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size;
 
 
