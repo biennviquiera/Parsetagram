@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#import <Parse/Parse.h>
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

@@ -179,6 +179,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionLabel" destination="tNg-6E-3hq" id="C8Y-gp-IOG"/>
                         <outlet property="postImage" destination="DRF-eU-htt" id="mws-y5-uWo"/>
                     </connections>
                 </viewController>
