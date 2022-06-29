@@ -11,6 +11,7 @@
 #import "HomeFeedCell.h"
 #import "Post.h"
 #import "LoginViewController.h"
+#import "DetailViewController.h"
 
 
 @interface HomeViewController()
@@ -82,12 +83,12 @@
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell" forIndexPath:indexPath];
     Post *currentPost = self.arrayOfPosts[indexPath.row];
-    NSLog(@"fifth item%@", self.arrayOfPosts[indexPath.row]);
     
     NSLog(@"I reached it!!");
     cell.image.file = currentPost[@"image"];
     cell.captionLabel.text = currentPost[@"caption"];
     [cell.image loadInBackground];
+    cell.post = currentPost;
     
     return cell;
 }
@@ -108,7 +109,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"detailSegue"]) {
-        
+        DetailViewController *detailVC = [segue destinationViewController];
+        NSLog(@"passing %@", ((HomeFeedCell *)sender).post);
+        detailVC.passedPost = ((HomeFeedCell *)sender).post;
     }
     
 }
