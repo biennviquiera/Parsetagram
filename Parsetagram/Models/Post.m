@@ -44,6 +44,7 @@
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
     
+    
     [newPost saveInBackgroundWithBlock: completion];
 }
 

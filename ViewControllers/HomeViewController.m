@@ -12,9 +12,10 @@
 #import "Post.h"
 #import "LoginViewController.h"
 #import "DetailViewController.h"
+#import "ComposeViewController.h"
 
 
-@interface HomeViewController()
+@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 @property(nonatomic, strong, nullable) UIRefreshControl *refreshControl;
 
 @end
@@ -100,6 +101,17 @@
     [refreshControl endRefreshing];
 }
 
+- (void) didPost:(Post *) post {
+    [self beginRefresh:self.refreshControl];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+      //Here your non-main thread.
+      [NSThread sleepForTimeInterval:2.0f];
+      dispatch_async(dispatch_get_main_queue(), ^{
+        //Here you returns to main thread.
+      });
+    });
+    [self.tableView reloadData];
+}
     
 
 #pragma mark - Navigation
@@ -108,6 +120,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"composeSegue"]) {
+        ComposeViewController *composeVC = [segue destinationViewController];
+        composeVC.delegate = self;
+    }
     if ([[segue identifier] isEqualToString:@"detailSegue"]) {
         DetailViewController *detailVC = [segue destinationViewController];
         NSLog(@"passing %@", ((HomeFeedCell *)sender).post);

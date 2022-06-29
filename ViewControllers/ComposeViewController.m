@@ -21,10 +21,16 @@
 - (IBAction)didTapCompose:(id)sender {
     //do the parse backend stuff here
     [Post postUserImage:self.postImage.image withCaption:self.captionLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error! Post did not work because %@", error.localizedDescription);
+        }
+        else {
+            [self dismissViewControllerAnimated:true completion:nil];
+            [self.delegate didPost];
+        }
     }];
     
     //close
-    [self dismissViewControllerAnimated:true completion:nil];
 
 }
 
