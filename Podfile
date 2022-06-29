@@ -8,6 +8,7 @@ target 'Parsetagram' do
   # Pods for Parsetagram
   pod 'Parse'
   pod 'Parse/UI'
+  pod 'DateTools'
 
   target 'ParsetagramTests' do
     inherit! :search_paths

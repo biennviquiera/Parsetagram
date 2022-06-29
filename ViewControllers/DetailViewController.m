@@ -6,6 +6,8 @@
 //
 
 #import "DetailViewController.h"
+#import "DateTools.h"
+#import "Parse/Parse.h"
 
 @interface DetailViewController ()
 
@@ -17,6 +19,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.passedPost);
+    
+//    self.userImage =;
+    self.postImage.file = self.passedPost.image;
+    [self.postImage loadInBackground];
+    NSDate *dateCreated = self.passedPost.createdAt;
+    self.dateLabel.text = [dateCreated shortTimeAgoSinceNow];
+    self.captionLabel.text = self.passedPost.caption;
+    self.usernameLabel.text = [self.passedPost.author username];
+    
 }
 
 /*
