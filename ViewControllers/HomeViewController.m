@@ -15,7 +15,7 @@
 #import "ComposeViewController.h"
 
 
-@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
+@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate, UIScrollViewDelegate>
 @property(nonatomic, strong, nullable) UIRefreshControl *refreshControl;
 
 @end
@@ -101,19 +101,40 @@
     [refreshControl endRefreshing];
 }
 
-- (void) didPost:(Post *) post {
+- (void) didPost {
     [self beginRefresh:self.refreshControl];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-      //Here your non-main thread.
-      [NSThread sleepForTimeInterval:2.0f];
-      dispatch_async(dispatch_get_main_queue(), ^{
-        //Here you returns to main thread.
-      });
-    });
     [self.tableView reloadData];
 }
-    
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(!self.isMoreDataLoading){
+       self.isMoreDataLoading = true;
+        // Calculate the position of one screen length before the bottom of the results
+                int scrollViewContentHeight = self.tableView.contentSize.height;
+                int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+                
+                // When the user has scrolled past the threshold, start requesting
+                if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+                    // ... Code to load more results ...
+                    self.isMoreDataLoading = true;
+                    [self queryPosts];
+                    
+                }
+        
+
+    }
+}
+    
+-(void)loadMoreData{
+  
+    // Update flag
+    self.isMoreDataLoading = false;
+    
+    // ... Use the new data to update the data source ...
+    
+    // Reload the tableView now that there is new data
+    [self.tableView reloadData];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
