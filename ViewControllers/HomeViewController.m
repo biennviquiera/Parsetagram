@@ -17,13 +17,14 @@
 
 @interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate, UIScrollViewDelegate>
 @property(nonatomic, strong, nullable) UIRefreshControl *refreshControl;
-
+@property NSInteger globalQuery;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.globalQuery =0;
     // Do any additional setup after loading the view.
     // query parse for data to show in home vc
     self.tableView.estimatedRowHeight = 360;
@@ -43,12 +44,12 @@
 - (void)queryPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-    
+    self.globalQuery += 20;
     [query includeKey:@"image"];
     [query includeKey:@"caption"];
     [query includeKey:@"author"];
     [query includeKey:@"createdAt"];
-    query.limit = 20;
+    query.limit = self.globalQuery;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (objects) {
@@ -85,9 +86,9 @@
     HomeFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell" forIndexPath:indexPath];
     Post *currentPost = self.arrayOfPosts[indexPath.row];
     
-    NSLog(@"I reached it!!");
     cell.image.file = currentPost[@"image"];
     cell.captionLabel.text = currentPost[@"caption"];
+    cell.userLabel.text = [currentPost[@"author"] username];
     [cell.image loadInBackground];
     cell.post = currentPost;
     
@@ -108,16 +109,14 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(!self.isMoreDataLoading){
-       self.isMoreDataLoading = true;
         // Calculate the position of one screen length before the bottom of the results
                 int scrollViewContentHeight = self.tableView.contentSize.height;
                 int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
-                
                 // When the user has scrolled past the threshold, start requesting
                 if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
                     // ... Code to load more results ...
                     self.isMoreDataLoading = true;
-                    [self queryPosts];
+                    [self loadMoreData];
                     
                 }
         
@@ -131,7 +130,7 @@
     self.isMoreDataLoading = false;
     
     // ... Use the new data to update the data source ...
-    
+    [self queryPosts];
     // Reload the tableView now that there is new data
     [self.tableView reloadData];
 }

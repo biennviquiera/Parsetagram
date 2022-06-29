@@ -138,34 +138,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="385.5" height="497"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption goes here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adN-Xg-xk3">
+                                                    <rect key="frame" x="20" y="394" width="145" height="75"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RIU-Xs-haS" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="11" width="385.5" height="414"/>
+                                                    <rect key="frame" x="0.0" y="35" width="385.5" height="360"/>
                                                     <color key="backgroundColor" systemColor="labelColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="414" id="fps-DC-y40"/>
-                                                        <constraint firstAttribute="height" constant="414" id="xsk-GR-gcW"/>
+                                                        <constraint firstAttribute="width" constant="385.5" id="fps-DC-y40"/>
+                                                        <constraint firstAttribute="height" constant="360" id="xsk-GR-gcW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption goes here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adN-Xg-xk3">
-                                                    <rect key="frame" x="20" y="448" width="145" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efr-mL-WvQ">
+                                                    <rect key="frame" x="39" y="6" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="efr-mL-WvQ" secondAttribute="trailing" constant="264.5" id="7t5-SN-03t"/>
                                                 <constraint firstAttribute="bottom" secondItem="adN-Xg-xk3" secondAttribute="bottom" constant="28" id="MGh-ZX-jbg"/>
-                                                <constraint firstItem="RIU-Xs-haS" firstAttribute="top" secondItem="fsX-3r-vl8" secondAttribute="top" constant="11" id="XF6-dC-7M0"/>
+                                                <constraint firstItem="RIU-Xs-haS" firstAttribute="top" secondItem="fsX-3r-vl8" secondAttribute="top" constant="35" id="XF6-dC-7M0"/>
+                                                <constraint firstItem="RIU-Xs-haS" firstAttribute="top" secondItem="efr-mL-WvQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Y86-FT-xLy"/>
                                                 <constraint firstItem="adN-Xg-xk3" firstAttribute="leading" secondItem="fsX-3r-vl8" secondAttribute="leading" constant="20" symbolic="YES" id="YzA-Ou-stf"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="adN-Xg-xk3" secondAttribute="trailing" constant="249" id="dSj-Xd-YIQ"/>
-                                                <constraint firstItem="adN-Xg-xk3" firstAttribute="top" secondItem="RIU-Xs-haS" secondAttribute="bottom" constant="23" id="fpG-ZS-byY"/>
+                                                <constraint firstItem="adN-Xg-xk3" firstAttribute="top" secondItem="RIU-Xs-haS" secondAttribute="bottom" constant="-1" id="fpG-ZS-byY"/>
                                                 <constraint firstAttribute="trailing" secondItem="RIU-Xs-haS" secondAttribute="trailing" id="rj1-R7-mEo"/>
+                                                <constraint firstItem="efr-mL-WvQ" firstAttribute="top" secondItem="fsX-3r-vl8" secondAttribute="top" constant="6" id="xk2-Em-uec"/>
                                                 <constraint firstItem="RIU-Xs-haS" firstAttribute="leading" secondItem="fsX-3r-vl8" secondAttribute="leading" id="zNb-RJ-CQJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="adN-Xg-xk3" id="V28-ds-3sb"/>
                                             <outlet property="image" destination="RIU-Xs-haS" id="1rs-0S-zz6"/>
+                                            <outlet property="userLabel" destination="efr-mL-WvQ" id="uyk-wi-G0E"/>
                                             <segue destination="YG7-SE-77i" kind="show" identifier="detailSegue" id="ahk-pW-Twa"/>
                                         </connections>
                                     </tableViewCell>
@@ -194,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjt-Ab-Nmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="43.526785714285715"/>
+            <point key="canvasLocation" x="800" y="44"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="191-AA-YuL">
@@ -282,7 +292,7 @@
                                 <action selector="dismissVC:" destination="D1S-SS-x0F" id="s2V-Ae-Wsy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" style="plain" id="78T-nM-2LR">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="78T-nM-2LR">
                             <connections>
                                 <action selector="didTapCompose:" destination="D1S-SS-x0F" id="fub-9F-TKx"/>
                             </connections>
