@@ -377,26 +377,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-i0-5G0" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-i0-5G0" customClass="PFImageView">
                                 <rect key="frame" x="20" y="88" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="INE-O5-29T"/>
+                                    <constraint firstAttribute="width" constant="128" id="hvV-eH-Kpp"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-0j-rzh">
-                                <rect key="frame" x="20" y="256" width="374" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-0j-rzh">
+                                <rect key="frame" x="20" y="256" width="354" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Edit Profile"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienn Viquiera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-Br-pIb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienn Viquiera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-Br-pIb">
                                 <rect key="frame" x="20" y="224" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z9o-PF-0cn">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z9o-PF-0cn">
                                 <rect key="frame" x="0.0" y="303" width="390" height="404"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Y9-Bz-Fkm">
                                     <size key="itemSize" width="128" height="128"/>
@@ -440,6 +440,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uSY-wK-nTj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oYB-Br-pIb" firstAttribute="top" secondItem="tIC-i0-5G0" secondAttribute="bottom" constant="8" symbolic="YES" id="1fS-aj-ZFo"/>
+                            <constraint firstItem="oYB-Br-pIb" firstAttribute="leading" secondItem="uSY-wK-nTj" secondAttribute="leading" constant="20" id="23b-pB-rbP"/>
+                            <constraint firstItem="qqL-0j-rzh" firstAttribute="leading" secondItem="uSY-wK-nTj" secondAttribute="leading" constant="20" id="HhI-0n-0hd"/>
+                            <constraint firstItem="Z9o-PF-0cn" firstAttribute="top" secondItem="qqL-0j-rzh" secondAttribute="bottom" constant="16" id="U9O-Ie-m9R"/>
+                            <constraint firstItem="uSY-wK-nTj" firstAttribute="trailing" secondItem="qqL-0j-rzh" secondAttribute="trailing" constant="16" id="VaB-1c-XA2"/>
+                            <constraint firstItem="Z9o-PF-0cn" firstAttribute="leading" secondItem="uSY-wK-nTj" secondAttribute="leading" id="jPy-9U-MZ0"/>
+                            <constraint firstItem="uSY-wK-nTj" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tIC-i0-5G0" secondAttribute="trailing" constant="242" id="pd9-DY-rYV"/>
+                            <constraint firstItem="uSY-wK-nTj" firstAttribute="bottom" secondItem="Z9o-PF-0cn" secondAttribute="bottom" constant="54" id="rwM-vK-E4C"/>
+                            <constraint firstItem="tIC-i0-5G0" firstAttribute="top" secondItem="uSY-wK-nTj" secondAttribute="top" constant="32" id="t1k-ds-wFw"/>
+                            <constraint firstItem="uSY-wK-nTj" firstAttribute="trailing" secondItem="Z9o-PF-0cn" secondAttribute="trailing" id="vxu-VV-HgA"/>
+                            <constraint firstItem="qqL-0j-rzh" firstAttribute="top" secondItem="oYB-Br-pIb" secondAttribute="bottom" constant="11" id="wKC-2h-uI1"/>
+                            <constraint firstItem="tIC-i0-5G0" firstAttribute="leading" secondItem="uSY-wK-nTj" secondAttribute="leading" constant="20" id="ybT-aK-gdD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bruh" id="2ly-rc-kgp"/>
                     <navigationItem key="navigationItem" title="Profile" id="MGJ-PB-iCc"/>

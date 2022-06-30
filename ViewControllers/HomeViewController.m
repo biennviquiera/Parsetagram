@@ -90,11 +90,15 @@
     cell.captionLabel.text = currentPost[@"caption"];
     cell.userLabel.text = [currentPost[@"author"] username];
 
-    cell.userImage.file = currentPost[@"author"][@"profileImage"];
-    [cell.userImage loadInBackground];
-    cell.userImage.layer.cornerRadius = cell.userImage.frame.size.width/2;
-    cell.userImage.clipsToBounds = YES;
+    if (currentPost[@"author"][@"profileImage"]) {
+        cell.userImage.file = currentPost[@"author"][@"profileImage"];
+        [cell.userImage loadInBackground];
+        
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.size.width/2;
+        cell.userImage.clipsToBounds = YES;
+    }
     [cell.image loadInBackground];
+
     cell.post = currentPost;
     
     return cell;
