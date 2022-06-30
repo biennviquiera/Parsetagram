@@ -6,8 +6,11 @@
 //
 
 #import "ProfileViewController.h"
+#import "ProfileCell.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) NSArray *test;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -15,7 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.collectionView.delegate = self;
     // Do any additional setup after loading the view.
+//    self.test = @[@"foo", @"bar"];
+//    [self.collectionView reloadData];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.test.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ProfileCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileCell" forIndexPath:indexPath];
+    cell.textLabel = [self.test objectAtIndex:indexPath.row];
+    return cell;
 }
 
 /*

@@ -10,6 +10,7 @@
 #import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @end
 
@@ -20,6 +21,7 @@
 }
 - (IBAction)didTapCompose:(id)sender {
     //do the parse backend stuff here
+    [self.activityView startAnimating];
     [Post postUserImage:self.postImage.image withCaption:self.captionLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error! Post did not work because %@", error.localizedDescription);
@@ -28,6 +30,8 @@
             [self dismissViewControllerAnimated:true completion:nil];
             [self.delegate didPost];
         }
+        
+        [self.activityView stopAnimating];
     }];
     
     //close
@@ -42,6 +46,10 @@
     UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tappedPhoto:)];
     photoTap.numberOfTapsRequired = 1;
     [self.postImage addGestureRecognizer:photoTap];
+    
+    //create activity indicator
+    UIActivityIndicatorView *postingIndicator = [[UIActivityIndicatorView alloc] init];
+    [postingIndicator startAnimating];
 }
 
 - (void)tappedPhoto: (id)sender {
