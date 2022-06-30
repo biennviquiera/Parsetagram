@@ -43,7 +43,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<a href="https://gfycat.com/jitteryvillainousgalapagossealion">
+<a href="https://gfycat.com/jitteryvillainousgalapagossealion">link</a>
 
 
 ## Credits
