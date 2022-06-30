@@ -22,6 +22,8 @@
     
 //    self.userImage =;
     self.postImage.file = self.passedPost.image;
+    self.userImage.layer.cornerRadius = self.userImage.frame.size.width/2;
+    self.userImage.clipsToBounds = YES;
     [self.postImage loadInBackground];
     NSDate *dateCreated = self.passedPost.createdAt;
     self.dateLabel.text = [dateCreated shortTimeAgoSinceNow];
