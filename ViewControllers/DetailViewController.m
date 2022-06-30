@@ -29,6 +29,8 @@
     self.dateLabel.text = [dateCreated shortTimeAgoSinceNow];
     self.captionLabel.text = self.passedPost.caption;
     self.usernameLabel.text = [self.passedPost.author username];
+    self.userImage.file = self.passedPost.author[@"profileImage"];
+    [self.userImage loadInBackground];
     
 }
 
