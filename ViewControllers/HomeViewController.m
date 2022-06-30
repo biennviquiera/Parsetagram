@@ -89,6 +89,8 @@
     cell.image.file = currentPost[@"image"];
     cell.captionLabel.text = currentPost[@"caption"];
     cell.userLabel.text = [currentPost[@"author"] username];
+    cell.userImage.file = currentPost[@"author"][@"profileImage"];
+    [cell.userImage loadInBackground];
     [cell.image loadInBackground];
     cell.post = currentPost;
     
