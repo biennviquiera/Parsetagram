@@ -1,8 +1,8 @@
 # Project 3 - *Parsetagram*
 
-**Name of your app** is a photo sharing app using Parse as its backend.
+**Parsetagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -50,7 +50,8 @@ Here's a walkthrough of implemented user stories:
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- Parse
+- DateTools
 
 ## Notes
 
@@ -58,7 +59,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2022] [name of copyright owner]
+    Copyright [2022] 
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
